@@ -1,5 +1,4 @@
-// Links.java
-package zlosnik.jp.lab04;
+package zlosnik.jp.lab04.client;
 
 public class Links {
     private String first;

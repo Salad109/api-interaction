@@ -1,5 +1,4 @@
-// ApiResponse.java
-package zlosnik.jp.lab04;
+package zlosnik.jp.lab04.client;
 
 import java.util.List;
 

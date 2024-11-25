@@ -1,5 +1,5 @@
 module client {
     requires java.net.http;
     requires com.fasterxml.jackson.databind;
-    exports zlosnik.jp.lab04;
+    exports zlosnik.jp.lab04.client;
 }

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>zlosnik.jp.lab04</groupId>
-    <artifactId>lab04</artifactId>
+    <artifactId>API_Interaction</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
