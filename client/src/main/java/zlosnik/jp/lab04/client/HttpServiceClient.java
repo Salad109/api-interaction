@@ -1,6 +1,7 @@
 package zlosnik.jp.lab04.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -12,8 +13,7 @@ public class HttpServiceClient implements HttpService {
 
     @Override
     public ApiResponse makeHttpRequest(String url) {
-        try {
-            HttpClient client = HttpClient.newHttpClient();
+        try (HttpClient client = HttpClient.newHttpClient()) {
             HttpRequest request = HttpRequest.newBuilder().uri(new URI(url)).GET().build();
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

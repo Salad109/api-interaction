@@ -1,4 +1,3 @@
-// Meta.java
 package zlosnik.jp.lab04.client;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
