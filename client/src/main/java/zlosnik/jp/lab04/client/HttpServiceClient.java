@@ -19,7 +19,7 @@ public class HttpServiceClient implements HttpService {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() != 200) {
-                throw new IOException("Failed to fetch data. HTTP status code: " + response.statusCode());
+                throw new RuntimeException("Failed to fetch data. HTTP status code: " + response.statusCode());
             }
 
             ObjectMapper objectMapper = new ObjectMapper();
