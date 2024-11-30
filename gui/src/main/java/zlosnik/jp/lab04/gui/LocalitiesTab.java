@@ -44,6 +44,7 @@ public class LocalitiesTab extends JPanel {
                     return;
                 }
                 storage.swiadczeniaZdrowotne = response.getData();
+                if (storage.swiadczeniaZdrowotne.isEmpty()) storage.swiadczeniaZdrowotne.add("Brak wyników");
                 updateList(storage.swiadczeniaZdrowotne);
             }
         });

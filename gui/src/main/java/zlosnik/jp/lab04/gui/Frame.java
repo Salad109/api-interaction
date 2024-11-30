@@ -13,11 +13,14 @@ public class Frame extends JFrame {
 
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        JPanel tab1 = new LocalitiesTab(storage, httpService);
-        tabbedPane.addTab("Miejscowości udzielania świadczeń", tab1);
+        JPanel benefitsTab = new BenefitsTab(storage, httpService);
+        tabbedPane.addTab("Świadczenia zdrowotne", benefitsTab);
 
-        JPanel tab2 = new PlacesTab(storage, httpService);
-        tabbedPane.addTab("Miejsca udzielania świadczeń ", tab2);
+        JPanel localitiesTab = new LocalitiesTab(storage, httpService);
+        tabbedPane.addTab("Miejscowości udzielania świadczeń", localitiesTab);
+
+        JPanel placesTab = new PlacesTab(storage, httpService);
+        tabbedPane.addTab("Miejsca udzielania świadczeń ", placesTab);
 
         add(tabbedPane);
         setVisible(true);
