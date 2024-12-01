@@ -1,14 +1,14 @@
 package zlosnik.jp.lab04.gui;
 
-import zlosnik.jp.lab04.client.HttpService;
-import zlosnik.jp.lab04.client.HttpServiceClient;
+import zlosnik.jp.lab04.client.ApiService;
+import zlosnik.jp.lab04.client.ApiServiceClient;
 
 public class Main {
 
     public static void main(String[] args) {
         var storage = new InformationStorage();
-        HttpService httpService = new HttpServiceClient();
+        ApiService apiService = new ApiServiceClient();
 
-        Frame frame = new Frame(storage, httpService);
+        Frame frame = new Frame(storage, apiService);
     }
 }

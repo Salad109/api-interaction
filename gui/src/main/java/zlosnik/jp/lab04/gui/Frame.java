@@ -1,11 +1,11 @@
 package zlosnik.jp.lab04.gui;
 
-import zlosnik.jp.lab04.client.HttpService;
+import zlosnik.jp.lab04.client.ApiService;
 
 import javax.swing.*;
 
 public class Frame extends JFrame {
-    public Frame(InformationStorage storage, HttpService httpService) {
+    public Frame(InformationStorage storage, ApiService apiService) {
         setTitle("Aplikacja NFZ");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -13,14 +13,15 @@ public class Frame extends JFrame {
 
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        JPanel benefitsTab = new BenefitsTab(storage, httpService);
+        JPanel benefitsTab = new BenefitsTab(storage, apiService);
+        JPanel localitiesTab = new LocalitiesTab(storage, apiService);
+        JPanel placesTab = new PlacesTab(storage, apiService);
+
         tabbedPane.addTab("Świadczenia zdrowotne", benefitsTab);
-
-        JPanel localitiesTab = new LocalitiesTab(storage, httpService);
         tabbedPane.addTab("Miejscowości udzielania świadczeń", localitiesTab);
-
-        JPanel placesTab = new PlacesTab(storage, httpService);
         tabbedPane.addTab("Miejsca udzielania świadczeń ", placesTab);
+
+        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 
         add(tabbedPane);
         setVisible(true);

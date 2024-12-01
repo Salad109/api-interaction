@@ -5,6 +5,7 @@ public class Links {
     private String prev;
     private String self;
     private String next;
+    private String last;
 
     public String getFirst() {
         return first;
@@ -46,5 +47,4 @@ public class Links {
         this.last = last;
     }
 
-    private String last;
 }

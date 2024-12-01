@@ -1,5 +1,5 @@
 package zlosnik.jp.lab04.client;
 
-public interface HttpService {
+public interface ApiService {
     ApiResponse makeHttpRequest(String url);
 }

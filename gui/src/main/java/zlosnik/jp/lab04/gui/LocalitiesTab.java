@@ -1,7 +1,7 @@
 package zlosnik.jp.lab04.gui;
 
 import zlosnik.jp.lab04.client.ApiResponse;
-import zlosnik.jp.lab04.client.HttpService;
+import zlosnik.jp.lab04.client.ApiService;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ public class LocalitiesTab extends JPanel {
     String provinceList = "<html>01 – dolnośląskie<br>02 – kujawsko-pomorskie<br>03 – lubelskie<br>04 – lubuskie<br>05 - łódzkie<br>06 – małopolskie<br>07 – mazowieckie<br>08 – opolskie<br>09 – podkarpackie<br>10 – podlaskie<br>11 – pomorskie<br>12 – śląskie<br>13 – świętokrzyskie<br>14 – warmińsko-mazurskie<br>15 – wielkopolskie<br>16 – zachodniopomorskie</html>";
     private DefaultListModel<String> listModel;
 
-    public LocalitiesTab(InformationStorage storage, HttpService httpService) {
+    public LocalitiesTab(InformationStorage storage, ApiService apiService) {
         setLayout(new BorderLayout());
 
         listModel = new DefaultListModel<>();
@@ -38,7 +38,8 @@ public class LocalitiesTab extends JPanel {
                 // Process the input text
                 System.out.println("Wyszukiwanie miejscowości. Miasto: " + cityInput + ", Kod województwa: " + provinceInput);
                 String apiUrl = getLocalitiesUrl(cityInput, provinceInput);
-                ApiResponse response = httpService.makeHttpRequest(apiUrl);
+                System.out.println(apiUrl);
+                ApiResponse response = apiService.makeHttpRequest(apiUrl);
                 if (response == null) {
                     System.out.println("Error while making request");
                     return;

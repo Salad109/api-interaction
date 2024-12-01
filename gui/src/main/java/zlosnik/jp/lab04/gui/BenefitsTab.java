@@ -1,7 +1,7 @@
 package zlosnik.jp.lab04.gui;
 
 import zlosnik.jp.lab04.client.ApiResponse;
-import zlosnik.jp.lab04.client.HttpService;
+import zlosnik.jp.lab04.client.ApiService;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class BenefitsTab extends JPanel {
     private DefaultListModel<String> listModel;
 
-    public BenefitsTab(InformationStorage storage, HttpService httpService) {
+    public BenefitsTab(InformationStorage storage, ApiService apiService) {
         setLayout(new BorderLayout());
 
         listModel = new DefaultListModel<>();
@@ -33,7 +33,8 @@ public class BenefitsTab extends JPanel {
                 // Process the input text
                 System.out.println("Wyszukiwanie świadczenia. Świadczenie: " + benefitInput);
                 String apiUrl = getBenefitsUrl(benefitInput);
-                ApiResponse response = httpService.makeHttpRequest(apiUrl);
+                System.out.println(apiUrl);
+                ApiResponse response = apiService.makeHttpRequest(apiUrl);
                 if (response == null) {
                     System.out.println("Error while making request");
                     return;

@@ -9,7 +9,7 @@ import java.net.http.HttpResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public class HttpServiceClient implements HttpService {
+public class ApiServiceClient implements ApiService {
 
     @Override
     public ApiResponse makeHttpRequest(String url) {
