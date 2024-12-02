@@ -19,7 +19,8 @@ public class ApiServiceClient implements ApiService {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() != 200) {
-                throw new RuntimeException("Failed to fetch data. HTTP status code: " + response.statusCode());
+                System.err.println("HTTP request failed with status code: " + response.statusCode());
+                return null;
             }
 
             ObjectMapper objectMapper = new ObjectMapper();
