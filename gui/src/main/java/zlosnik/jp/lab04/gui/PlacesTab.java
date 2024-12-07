@@ -35,7 +35,6 @@ public class PlacesTab extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 String cityInput = cityField.getText();
                 String provinceInput = provinceField.getText();
-                // Process the input text
                 System.out.println("Wyszukiwanie miejsca. Miasto: " + cityInput + ", Kod województwa: " + provinceInput);
                 String apiUrl = getPlacesUrl(cityInput, provinceInput);
                 System.out.println(apiUrl);

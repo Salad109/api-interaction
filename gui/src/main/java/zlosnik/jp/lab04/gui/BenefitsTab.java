@@ -30,7 +30,6 @@ public class BenefitsTab extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String benefitInput = benefitField.getText();
-                // Process the input text
                 System.out.println("Wyszukiwanie świadczenia. Świadczenie: " + benefitInput);
                 String apiUrl = getBenefitsUrl(benefitInput);
                 System.out.println(apiUrl);

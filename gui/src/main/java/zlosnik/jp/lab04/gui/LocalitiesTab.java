@@ -35,7 +35,6 @@ public class LocalitiesTab extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 String cityInput = cityField.getText();
                 String provinceInput = provinceField.getText();
-                // Process the input text
                 System.out.println("Wyszukiwanie miejscowości. Miasto: " + cityInput + ", Kod województwa: " + provinceInput);
                 String apiUrl = getLocalitiesUrl(cityInput, provinceInput);
                 System.out.println(apiUrl);
